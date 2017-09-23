@@ -7,7 +7,7 @@
   * Vagrant : v.2.0.0
   * guest OS : Ubuntu 16.04.3 LTS
 ## 목차/순서
-1. VirtualBox, Vgrant 설치
+1. VirtualBox, Vagrant 설치
 2. 폴더 생성, 파일 다운로드
 3. 가상머신 생성
 4. 서버 실행 및 확인
@@ -36,14 +36,8 @@
   * grep . /etc/*-release
 ## 5. VM 환경 설정
 ### 공유 폴더 설정
-* 아래 내용은 root 권한으로 수행해야 함.
-* mount 명령어로 공유 폴더 설정
-  *  mount -t vboxsf workspace /workspace
-* vim 실행
-  * vi /etc/rc.d/rc.local
-* 아래 내용 추가
-  * mount -t vboxsf workspace /workspace
-* 차후 VM을 재실행하여 공유폴더가 자동으로 공유되는지 확인합니다.
+* 기본값으로 guest os /vagrant 와 폴더 공유를 함
+* /home/vagrant와 /vagrant는 별개임
 ## 6. git 설정
 **ssh key 생성**
 1. ssh key를 생성 합니다.
@@ -62,7 +56,7 @@ $ git config --global user.name "이름"
 $ git config --global user.email "이메일"
 </code>
 </pre>
-- - - 
+- - -
 # 설치 주의사항
 **port forwarding 중 vagrant up 실패**
 1. vagrant up 시 port forward error가 난다면 이미 잡혀있는 경우입니다.
@@ -97,3 +91,6 @@ $ vagrant up
 </pre>
 * vagrant관련 세미나
   * https://youtu.be/PIyOuOYR8uY
+* 참조 사이트
+  * https://www.joinc.co.kr/w/Site/cloud/automation/ChefDeventWithVB
+  * http://www.mimul.com/pebble/default/2013/11/15/1384511737191.html
